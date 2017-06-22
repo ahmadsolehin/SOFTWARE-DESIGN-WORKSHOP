@@ -1,0 +1,1229 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>INSPINIA | Dashboard</title>
+
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/font-awesome.css" rel="stylesheet">
+
+    <!-- Toastr style -->
+    <link href="css/toastr.min.css" rel="stylesheet">
+
+    <!-- Gritter -->
+    <link href="js/plugins/gritter/jquery.gritter.css" rel="stylesheet">
+
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+
+   
+    <div id="wrapper">
+
+    <nav class="navbar-default navbar-static-side" role="navigation">
+
+      <li class="nav-header" style="list-style: none;">
+        <div class="dropdown profile-element">
+
+          <span>
+            <img alt="image" width = "170px" height = "90px" class="img-rounded" src="img/kereta-sewa.jpg" />
+          </span>
+
+          <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+            <span class="clear"> <span class="block m-t-xs"> <strong class="text-muted text-xs block">Forecaster</strong>
+            </span> </span> </a>
+
+            <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+              <span class="clear"> <span class="font-bold">David Williams <b class="caret"></b></span> </span> </a>
+              <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="contacts.html">Contacts</a></li>
+                <li><a href="mailbox.html">Mailbox</a></li>
+                <li class="divider"></li>
+                <li><a href="login.html">Logout</a></li>
+              </ul>
+
+            </div>
+            <div class="logo-element">
+            <img alt="image" width="50" height="50" class="img-circle" src="img/kereta-sewa.jpg" />
+            </div>
+          </li>
+
+
+
+        <div class="sidebar-collapse">
+
+            <ul class="nav metismenu" id="side-menu"> 
+
+
+              <li>
+                <a href="#"><i class="fa fa-cogs"></i> <span class="nav-label">Setting</span><span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level collapse">
+                 <li>
+                  <a href="pages/test.php" class="ayam" >Users</a>
+                </li>
+
+                <li>
+                  <a href="#" class="" onclick="addTab('Access Control','pages/test.php')">Access Control</a>
+                </li>
+                <li>
+                  <a href="#" class="" onclick="addTab('Menu','pages/xsd.php')">Menu</a>
+                </li>
+              </ul>
+            </li>
+                
+
+              <li>
+                <a href="#"><i class="fa fa-sun-o"></i> <span class="nav-label">Visual Weather</span><span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level collapse">
+                  <li>
+                    <a href="#">Visual Weather<span class="fa arrow"></span></a>
+                    <ul class="nav nav-third-level">
+
+                      <li>
+                        <a href="javascript:void()"  onclick="browsing_weather()">Browsing Weather</a>
+                      </li>
+
+                    </ul>
+                  </li>
+
+                  <li>
+                    <a href="javascript:void()"  onclick="monitoring()">Monitoring</a>
+                  </li>
+
+                </ul>
+              </li>
+
+
+                    <li>
+                        <a href="#"><i class="fa fa-exclamation-circle"></i> <span class="nav-label">Forecasts</span><span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level collapse">
+                            <li>
+                                <a href="#">Forecasts<span class="fa arrow"></span></a>
+                                <ul class="nav nav-third-level">
+
+                                   <li class=""><a href="javascript:void()"  onclick="weather_forecast()">7 Days Weather Forecast</a></li>
+                                   <li class=""><a href="javascript:void()"  onclick="ramalan_cuaca_7_hari()">Ramalan Cuaca 7 Hari</a></li>
+                                   <li class=""><a href="javascript:void()"  onclick="ayam()">7 Days Marine Forecast</a></li>
+                                   <li class=""><a href="javascript:void()"  onclick="ayam()">Ramalan Cuaca Lautan 7 Hari</a></li>
+                                   <li class=""><a href="javascript:void()"  onclick="ayam()">Other Forecast</a></li>
+                                   <li class=""><a href="javascript:void()"  onclick="ayam()">Tide Forecast</a></li>
+                                   <li class=""><a href="javascript:void()"  onclick="ayam()">Severe Weather</a></li>
+
+                               </ul>
+                           </li>
+
+                           <li>
+                                <a href="#">Local Warnings<span class="fa arrow"></span></a>
+                                <ul class="nav nav-third-level">
+
+                                   <li class=""><a href="javascript:void()"  onclick="ayam()">Severe Weather</a></li>
+                                   <li class=""><a href="javascript:void()"  onclick="ayam()">Tropical Cyclone/Storm</a></li>
+                                   <li class=""><a href="javascript:void()"  onclick="ayam()">High Seas</a></li>
+                                   <li class=""><a href="javascript:void()"  onclick="ayam()">Warning Archives</a></li>
+
+                               </ul>
+                           </li>
+
+                           <li>
+                                <a href="#">Overseas Warnings<span class="fa arrow"></span></a>
+                                <ul class="nav nav-third-level">
+
+                                   <li class=""><a href="javascript:void()"  onclick="ayam()">International Typhoon Center</a></li>
+                                   <li class=""><a href="javascript:void()"  onclick="ayam()">Severe Weather</a></li>
+                                   <li class=""><a href="javascript:void()"  onclick="ayam()">Tropical Cyclone/Storm</a></li>
+                                   <li class=""><a href="javascript:void()"  onclick="ayam()">High Seas</a></li>
+                                   <li class=""><a href="javascript:void()"  onclick="ayam()">Environmental Hazard</a></li>
+                                   <li class=""><a href="javascript:void()"  onclick="ayam()">Tsunami Warning and Bulletins</a></li>
+                                   <li class=""><a href="javascript:void()"  onclick="ayam()">Names of Tropical Cyclones</a></li>
+                                   <li class=""><a href="javascript:void()"  onclick="ayam()">Nuclear Incident</a></li>
+
+                               </ul>
+                           </li>
+
+                           <li>
+                                <a href="#">Storm Track<span class="fa arrow"></span></a>
+                                <ul class="nav nav-third-level">
+
+                                   <li class=""><a href="javascript:void()"  onclick="ayam()">Storm-Tracking</a></li>
+                                   <li class=""><a href="javascript:void()"  onclick="ayam()">Storm Track Static</a></li>
+
+                               </ul>
+                           </li>
+
+                           <li>
+                                <a href="#">Preparation<span class="fa arrow"></span></a>
+                                <ul class="nav nav-third-level">
+                                 
+                               </ul>
+                           </li>
+
+                    </ul>
+                </li>
+
+                    <li>
+                        <a href="#"><i class="fa fa-binoculars"></i> <span class="nav-label">Observations</span><span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level collapse">
+                            <li>
+                                <a href="#">Bulletins<span class="fa arrow"></span></a>
+                                <ul class="nav nav-third-level">
+
+                                   <li class=""><a href="javascript:void()"  onclick="ayam()">Daily Bulletins</a></li>
+                                   <li class=""><a href="javascript:void()"  onclick="ayam()">Daily Monsoon Analysis</a></li>
+                                   <li class=""><a href="javascript:void()"  onclick="ayam()">MSL Pressure Series</a></li>
+                                   <li class=""><a href="javascript:void()"  onclick="ayam()">Upper Wind Sheet</a></li>
+                                   <li class=""><a href="javascript:void()"  onclick="ayam()">Monthly Accumulated</a></li>
+                                   <li class=""><a href="javascript:void()"  onclick="ayam()">Rainfall</a></li>
+                                   <li class=""><a href="javascript:void()"  onclick="ayam()">Daily AWS Climate Station</a></li>
+
+                                </ul>
+                            </li>
+                            
+                             <li>
+                                <a href="#">AWS Hourly Observation<span class="fa arrow"></span></a>
+                                <ul class="nav nav-third-level">
+
+                                   <li class=""><a href="javascript:void()"  onclick="ayam()">Rainfall</a></li>
+                                   <li class=""><a href="javascript:void()"  onclick="ayam()">Temperature</a></li>
+                                   <li class=""><a href="javascript:void()"  onclick="ayam()">Visibility</a></li>
+                                   <li class=""><a href="javascript:void()"  onclick="ayam()">Relative Humidity</a></li>
+
+                                </ul>
+                            </li>
+
+                            <li>
+                              <a href="#">Contour And Shaded<span class="fa arrow"></span></a>
+                              <ul class="nav nav-third-level">
+
+                                   <li class=""><a href="javascript:void()"  onclick="ayam()">Relative Humidity</a></li>
+
+                             </ul>
+                           </li>
+
+                           <li>
+                            <a href="#">AWS (MID-MID)<span class="fa arrow"></span></a>
+                            <ul class="nav nav-third-level">
+
+                            </ul>
+                          </li>
+
+                          <li>
+                              <a href="#">Observation<span class="fa arrow"></span></a>
+                              <ul class="nav nav-third-level">
+
+                                  <li class=""><a href="javascript:void()"  onclick="ayam()">Rainfall</a></li>
+                                   <li class=""><a href="javascript:void()"  onclick="ayam()">Temperature</a></li>
+                                   <li class=""><a href="javascript:void()"  onclick="ayam()">Visibility</a></li>
+                                   <li class=""><a href="javascript:void()"  onclick="ayam()">Relative Humidity</a></li>
+
+                             </ul>
+                           </li>
+
+                           <li>
+                            <a href="#">Charts<span class="fa arrow"></span></a>
+                            <ul class="nav nav-third-level">
+
+                              <li class=""><a href="javascript:void()"  onclick="ayam()">MSL Charts</a></li>
+                              <li class=""><a href="javascript:void()"  onclick="ayam()">UpperAir Charts</a></li>
+                              <li class=""><a href="javascript:void()"  onclick="ayam()">UpperAir (6-panel) Static</a></li>
+                              <li class=""><a href="javascript:void()"  onclick="ayam()">UpperAir Charts Static</a></li>                              
+                              <li class=""><a href="javascript:void()"  onclick="ayam()">Surface Charts</a></li>
+                              <li class=""><a href="javascript:void()"  onclick="ayam()">Metar Sheets</a></li>
+                              <li class=""><a href="javascript:void()"  onclick="ayam()">Speci Sheets</a></li>
+                            </ul>
+                          </li>
+
+                          <li>
+                            <a href="#">Tephi<span class="fa arrow"></span></a>
+                            <ul class="nav nav-third-level">
+
+                              <li class=""><a href="javascript:void()"  onclick="ayam()">Tephigram</a></li>
+                              <li class=""><a href="javascript:void()"  onclick="ayam()">Tephigram (Static)</a></li>
+
+                            </ul>
+                          </li>
+
+                          <li>
+                            <a href="#">Weather Cam<span class="fa arrow"></span></a>
+                            <ul class="nav nav-third-level">
+
+                              <li class=""><a href="javascript:void()"  onclick="ayam()">Weather Cam</a></li>
+
+                            </ul>
+                          </li>
+
+                          <li>
+                            <a href="#">Jerebu Watch<span class="fa arrow"></span></a>
+                            <ul class="nav nav-third-level">
+
+                              <li class=""><a href="javascript:void()"  onclick="ayam()">Indonesian Wx</a></li>
+                              <li class=""><a href="javascript:void()"  onclick="ayam()">Haze Report</a></li>   <li class=""><a href="javascript:void()"  onclick="ayam()">Aerosol Concentration</a></li>                              
+                            </ul>
+                          </li>
+
+                          <li>
+                            <a href="#">DID Observation<span class="fa arrow"></span></a>
+                            <ul class="nav nav-third-level">
+
+                              <li class=""><a href="javascript:void()"  onclick="ayam()">Info Banjir</a></li>
+
+                            </ul>
+                          </li>
+
+                          <li>
+                            <a href="#">Lightning<span class="fa arrow"></span></a>
+                            <ul class="nav nav-third-level">
+
+                              <li class=""><a href="javascript:void()"  onclick="ayam()">SAFIR-Lightning</a></li>
+                              
+                            </ul>
+                          </li>                          
+
+                        </ul>
+                    </li>
+
+
+                    <li>
+                      <a href="#"><i class="fa fa-tint"></i> <span class="nav-label">Radar</span><span class="fa arrow"></span></a>
+                      <ul class="nav nav-second-level collapse">
+
+                        <li>
+                          <a href="#">MMD<span class="fa arrow"></span></a>
+                          <ul class="nav nav-third-level">
+
+                            <li>
+                              <a href="javascript:void()"  onclick="ayam()">MMD Radar</a>
+                            </li>
+                            <li>
+                              <a href="javascript:void()"  onclick="ayam()">MMD Interactive</a>
+                            </li>          
+                            <li>
+                              <a href="javascript:void()"  onclick="ayam()">MMD Radar Non-Composite</a>
+                            </li>
+                            <li>
+                              <a href="javascript:void()"  onclick="ayam()">MMD Radar (Individual)</a>
+                            </li>
+                            <li>
+                              <a href="javascript:void()"  onclick="ayam()">KLIA Doppler Radar</a>
+                            </li>          
+                            <li>
+                              <a href="javascript:void()"  onclick="ayam()">KLIA Doppler Loop-PPI</a>
+                            </li>
+                            <li>
+                              <a href="javascript:void()"  onclick="ayam()">KLIA Doppler Loop - CAPPI</a>
+                            </li>          
+                            <li>
+                              <a href="javascript:void()"  onclick="ayam()">Radar Velocity</a>
+                            </li>
+                            <li>
+                              <a href="javascript:void()"  onclick="ayam()">ARP - Additional Radar</a>
+                            </li>          
+                            <li>
+                              <a href="javascript:void()"  onclick="ayam()">Package</a>
+                            </li>                                                                                    
+                          </ul>
+                        </li>
+
+
+                        <li>
+                          <a href="#">Accumulated Rainfall<span class="fa arrow"></span></a>
+                          <ul class="nav nav-third-level">
+
+                           <li class=""><a href="javascript:void()"  onclick="ayam()">Last 24 Hours</a></li>
+                           <li class=""><a href="javascript:void()"  onclick="ayam()">Last 18 Hours</a></li>
+                           <li class=""><a href="javascript:void()"  onclick="ayam()">Last 12 Hours</a></li>
+                           <li class=""><a href="javascript:void()"  onclick="ayam()">Last 6 Hours</a></li>
+                           <li class=""><a href="javascript:void()"  onclick="ayam()">Last 3 Hours</a></li>
+
+                         </ul>
+                       </li>
+
+
+                       <li>
+                        <a href="#">Brunei<span class="fa arrow"></span></a>
+                        <ul class="nav nav-third-level">
+
+                         <li class=""><a href="javascript:void()"  onclick="ayam()">Brunei Doppler</a></li>
+                         <li class=""><a href="javascript:void()"  onclick="ayam()">Brunei Doppler Loop</a></li>
+
+                       </ul>
+                     </li>
+
+                       <li>
+                        <a href="#">Singapore<span class="fa arrow"></span></a>
+                        <ul class="nav nav-third-level">
+
+                         <li class=""><a href="javascript:void()"  onclick="ayam()">Singapore Doppler</a></li>
+
+                       </ul>
+                     </li>       
+
+                       <li>
+                        <a href="#">Thailand<span class="fa arrow"></span></a>
+                        <ul class="nav nav-third-level">
+
+                         <li class=""><a href="javascript:void()"  onclick="ayam()">Songkhla Doppler</a></li>
+                         <li class=""><a href="javascript:void()"  onclick="ayam()">Surathani Doppler</a></li>
+                         <li class=""><a href="javascript:void()"  onclick="ayam()">Phuket Doppler</a></li>
+
+                       </ul>
+                     </li>  
+
+                      </ul>
+                    </li>
+
+
+                    <li>
+                      <a href="#"><i class="fa fa-desktop"></i> <span class="nav-label">Satellite</span><span class="fa arrow"></span></a>
+                      <ul class="nav nav-second-level collapse">
+                        <li>
+                          <a href="#">Himawari<span class="fa arrow"></span></a>
+                          <ul class="nav nav-third-level">
+
+                            <li>
+                              <a href="javascript:void()"  onclick="ayam()">ASEAN</a>
+                            </li>
+                            <li>
+                              <a href="javascript:void()"  onclick="ayam()">Broadscale</a>
+                            </li>                            <li>
+                            <a href="javascript:void()"  onclick="ayam()">Global</a>
+                          </li>
+
+                        </ul>
+                      </li>
+
+                      <li>
+                        <a href="#">FY-2G<span class="fa arrow"></span></a>
+                        <ul class="nav nav-third-level">
+
+                          <li>
+                            <a href="javascript:void()"  onclick="ayam()">FY-2G Interactive</a>
+                          </li>
+                          <li>
+                            <a href="javascript:void()"  onclick="ayam()">ASEAN</a>
+                          </li>
+                          <li>
+                            <a href="javascript:void()"  onclick="ayam()">Broadscale</a>
+                          </li>                            <li>
+                          <a href="javascript:void()"  onclick="ayam()">Global</a>
+                        </li>
+
+                      </ul>
+                    </li>
+
+                      <li>
+                        <a href="#">Hotspot Monitoring<span class="fa arrow"></span></a>
+                        <ul class="nav nav-third-level">
+
+                          <li>
+                            <a href="javascript:void()"  onclick="ayam()">NOAA</a>
+                          </li>
+                          <li>
+                            <a href="javascript:void()"  onclick="ayam()">MODIS</a>
+                          </li>
+                          <li>
+                            <a href="javascript:void()"  onclick="ayam()">Hotspot Report Archive</a>
+                          </li>                      
+
+                      </ul>
+                    </li>
+
+                      <li>
+                        <a href="#">POLAR<span class="fa arrow"></span></a>
+                        <ul class="nav nav-third-level">
+
+                          <li>
+                            <a href="javascript:void()"  onclick="ayam()">NOAA</a>
+                          </li>                     
+
+                      </ul>
+                    </li>
+
+<li>
+                        <a href="#">MODISWEB<span class="fa arrow"></span></a>
+                        <ul class="nav nav-third-level">
+
+                          <li>
+                            <a href="javascript:void()"  onclick="ayam()">Sea Surface Temperature</a>
+                          </li>
+                          <li>
+                            <a href="javascript:void()"  onclick="ayam()">Infrared Cloud</a>
+                          </li>
+                          <li>
+                            <a href="javascript:void()"  onclick="ayam()">Cloud Amount</a>
+                          </li>                      
+                          <li>
+                            <a href="javascript:void()"  onclick="ayam()">Cloud Mask</a>
+                          </li>   
+                          <li>
+                            <a href="javascript:void()"  onclick="ayam()">Cloud Top Height</a>
+                          </li>   
+                          <li>
+                            <a href="javascript:void()"  onclick="ayam()">NDVI</a>
+                          </li>   
+                          <li>
+                            <a href="javascript:void()"  onclick="ayam()">Smoke Haze</a>
+                          </li>   
+                      </ul>
+                    </li>                    
+
+                  </ul>
+                </li>
+
+
+                <li>
+                  <a href="#"><i class="fa fa-globe"></i> <span class="nav-label">Guidance</span><span class="fa arrow"></span></a>
+                  <ul class="nav nav-second-level collapse">
+                    <li>
+                      <a href="#">International Models<span class="fa arrow"></span></a>
+                      <ul class="nav nav-third-level">
+
+                        <li>
+                          <a href="javascript:void()"  onclick="ayam()">EC Model</a>
+                        </li>
+                        <li>
+                          <a href="javascript:void()"  onclick="ayam()">EC Model (Wind)</a>
+                        </li>
+                        <li>
+                          <a href="javascript:void()"  onclick="ayam()">JMA Model</a>
+                        </li>
+                        <li>
+                          <a href="javascript:void()"  onclick="ayam()">UK Model</a>
+                        </li>
+                        <li>
+                          <a href="javascript:void()"  onclick="ayam()">FNMOC WXMAP Model</a>
+                        </li>
+                        <li>
+                          <a href="javascript:void()"  onclick="ayam()">TMD NWP Model</a>
+                        </li>
+
+                      </ul>
+                    </li>
+
+                    <li>
+                      <a href="#">MMD-WRF Interactive<span class="fa arrow"></span></a>
+                      <ul class="nav nav-third-level">
+
+                        <li>
+                          <a href="javascript:void()"  onclick="ayam()">South East Asia</a>
+                        </li>
+                        <li>
+                          <a href="javascript:void()"  onclick="ayam()">Malaysia</a>
+                        </li>
+                        <li>
+                          <a href="javascript:void()"  onclick="ayam()">Peninsular</a>
+                        </li>
+                        <li>
+                          <a href="javascript:void()"  onclick="ayam()">Sabah & Sarawak</a>
+                        </li>
+
+                      </ul>
+                    </li>
+
+                    <li>
+                      <a href="#">MMD Models Links<span class="fa arrow"></span></a>
+                      <ul class="nav nav-third-level">
+
+                        <li>
+                          <a href="javascript:void()"  onclick="ayam()">MMD-WRF (36,12,4km)</a>
+                        </li>
+                        <li>
+                          <a href="javascript:void()"  onclick="ayam()">MMD-EPS</a>
+                        </li>
+                        <li>
+                          <a href="javascript:void()"  onclick="ayam()">MMD-WAM</a>
+                        </li>
+                        <li>
+                          <a href="javascript:void()"  onclick="ayam()">MMD-JMA Storm Surge Model</a>
+                        </li>
+
+                      </ul>
+                    </li>
+
+                    <li>
+                      <a href="#">Model Comparisons<span class="fa arrow"></span></a>
+                      <ul class="nav nav-third-level">
+
+                        <li>
+                          <a href="javascript:void()"  onclick="ayam()">MSLP</a>
+                        </li>
+
+                      </ul>
+                    </li>
+
+                    <li>
+                      <a href="#">Climate Model<span class="fa arrow"></span></a>
+                      <ul class="nav nav-third-level">
+
+                        <li>
+                          <a href="javascript:void()"  onclick="ayam()">NOAA Monsoon Forecasts</a>
+                        </li>
+                        <li>
+                          <a href="javascript:void()"  onclick="ayam()">ECMWF Products</a>
+                        </li>
+                        <li>
+                          <a href="javascript:void()"  onclick="ayam()">JMA/TCC Products</a>
+                        </li>
+                        <li>
+                          <a href="javascript:void()"  onclick="ayam()">IRI Columbia Products</a>
+                        </li>
+                        <li>
+                          <a href="javascript:void()"  onclick="ayam()">BOM OLR Products</a>
+                        </li>
+                        <li>
+                          <a href="javascript:void()"  onclick="ayam()">CDC NOAA OLR Products</a>
+                        </li>
+                        <li>
+                          <a href="javascript:void()"  onclick="ayam()">NOAA El-Nino Outlook</a>
+                        </li>
+                        <li>
+                          <a href="javascript:void()"  onclick="ayam()">NOAA SST Outlook</a>
+                        </li>
+                        <li>
+                          <a href="javascript:void()"  onclick="ayam()">APCC Products</a>
+                        </li>
+                        <li>
+                          <a href="javascript:void()"  onclick="ayam()">NOAA Earth System Laboritory</a>
+                        </li>
+                        
+                      </ul>
+                    </li>
+
+                    <li>
+                      <a href="#">Trajectory Model<span class="fa arrow"></span></a>
+                      <ul class="nav nav-third-level">
+
+                        <li>
+                          <a href="javascript:void()"  onclick="ayam()">MMD-HY-SPLIT Trajectory Model</a>
+                        </li>
+
+                      </ul>
+                    </li>
+
+                    <li>
+                      <a href="#">Ensemble Prediction<span class="fa arrow"></span></a>
+                      <ul class="nav nav-third-level">
+
+                        <li>
+                          <a href="javascript:void()"  onclick="ayam()">ECMWF Products</a>
+                        </li>
+                        <li>
+                          <a href="javascript:void()"  onclick="ayam()">JMAP Products</a>
+                        </li>
+                      </ul>
+                    </li>
+
+                  </ul>
+                </li>
+
+                <li>
+                  <a href="#"><i class="fa fa-building"></i> <span class="nav-label">Climate</span><span class="fa arrow"></span></a>
+                  <ul class="nav nav-second-level collapse">
+                    <li>
+                      <a href="#">Department<span class="fa arrow"></span></a>
+                      <ul class="nav nav-third-level">
+
+                        <li>
+                          <a href="javascript:void()"  onclick="ayam()">Home Page</a>
+                        </li>
+                        <li>
+                          <a href="javascript:void()"  onclick="ayam()">Climate Data Application</a>
+                        </li>
+
+                      </ul>
+                    </li>
+
+                  </ul>
+                </li>
+
+                <li>
+                  <a href="#"><i class="fa fa-plane"></i> <span class="nav-label">Aviation</span><span class="fa arrow"></span></a>
+                  <ul class="nav nav-second-level collapse">
+                    <li>
+                      <a href="#">Aviation<span class="fa arrow"></span></a>
+                      <ul class="nav nav-third-level">
+
+                        <li>
+                          <a href="javascript:void()"  onclick="ayam()">TAFs</a>
+                        </li>
+                        <li>
+                          <a href="javascript:void()"  onclick="ayam()">METARs</a>
+                        </li>
+                        <li>
+                          <a href="javascript:void()"  onclick="ayam()">SIGMETs</a>
+                        </li>
+                        <li>
+                          <a href="javascript:void()"  onclick="ayam()">ASEAN Aviation MET</a>
+                        </li>
+                        <li>
+                          <a href="javascript:void()"  onclick="ayam()">WAFS (charts)</a>
+                        </li>
+                        <li>
+                          <a href="javascript:void()"  onclick="ayam()">SIGWX Backup (charts)</a>
+                        </li>
+
+                      </ul>
+                    </li>
+
+                    <li>
+                      <a href="#">KLIA<span class="fa arrow"></span></a>
+                      <ul class="nav nav-third-level">
+
+                        <li>
+                          <a href="javascript:void()"  onclick="ayam()">Opmet Data</a>
+                        </li>
+                        <li>
+                          <a href="javascript:void()"  onclick="ayam()">Volcanic Ash</a>
+                        </li>
+                        <li>
+                          <a href="javascript:void()"  onclick="ayam()">Tropical Storm</a>
+                        </li>
+                        <li>
+                          <a href="javascript:void()"  onclick="ayam()">Area QNH</a>
+                        </li>
+                        <li>
+                          <a href="javascript:void()"  onclick="ayam()">ABT Web Link</a>
+                        </li>                   
+
+                      </ul>
+                    </li>
+
+
+                  </ul>
+                </li>
+
+                <li>
+                  <a href="#"><i class="fa fa-home"></i> <span class="nav-label">Seismology</span><span class="fa arrow"></span></a>
+                  <ul class="nav nav-second-level collapse">
+                    <li>
+                      <a href="#">Department<span class="fa arrow"></span></a>
+                      <ul class="nav nav-third-level">
+
+                        <li>
+                          <a href="javascript:void()"  onclick="ayam()">Home Page</a>
+                        </li>
+
+                      </ul>
+                    </li>
+
+                  </ul>
+                </li>
+
+                <li>
+                  <a href="#"><i class="fa fa-tasks"></i> <span class="nav-label">Environment</span><span class="fa arrow"></span></a>
+                  <ul class="nav nav-second-level collapse">
+                    <li>
+                      <a href="#">Department<span class="fa arrow"></span></a>
+                      <ul class="nav nav-third-level">
+
+                        <li>
+                          <a href="javascript:void()"  onclick="ayam()">Home Page</a>
+                        </li>
+
+                      </ul>
+                    </li>
+
+                  </ul>
+                </li>
+
+                <li>
+                  <a href="#"><i class="fa fa-bar-chart"></i> <span class="nav-label">System</span><span class="fa arrow"></span></a>
+                  <ul class="nav nav-second-level collapse">
+                    <li>
+                      <a href="#">Monitoring<span class="fa arrow"></span></a>
+                      <ul class="nav nav-third-level">
+
+                        <li>
+                          <a href="javascript:void()"  onclick="ayam()">Servers</a>
+                        </li>
+                        <li>
+                          <a href="javascript:void()"  onclick="ayam()">CMSS</a>
+                        </li>
+                        <li>
+                          <a href="javascript:void()"  onclick="ayam()">Local Station Messages</a>
+                        </li>
+                        <li>
+                          <a href="javascript:void()"  onclick="ayam()">TAF Report</a>
+                        </li>      
+
+                      </ul>
+                    </li>
+
+                    <li>
+                      <a href="#">Extract<span class="fa arrow"></span></a>
+                      <ul class="nav nav-third-level">
+
+                        <li>
+                          <a href="javascript:void()"  onclick="ayam()">CMSS Log</a>
+                        </li>
+                        <li>
+                          <a href="javascript:void()"  onclick="ayam()">CMSS Messages</a>
+                        </li>        
+
+                      </ul>
+                    </li>
+
+                    <li>
+                      <a href="#">Documentation<span class="fa arrow"></span></a>
+                      <ul class="nav nav-third-level">
+
+                        <li>
+                          <a href="javascript:void()"  onclick="ayam()">Documentation</a>
+                        </li>
+
+                      </ul>
+                    </li>
+
+                    <li>
+                      <a href="#">Archive<span class="fa arrow"></span></a>
+                      <ul class="nav nav-third-level">
+
+                        <li>
+                          <a href="javascript:void()"  onclick="ayam()">Archive</a>
+                        </li>
+
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+
+
+
+
+
+
+              
+              
+            </ul>
+
+        </div>
+    </nav>
+
+        <div id="page-wrapper" class="gray-bg">
+
+
+          <div class="row wrapper border-bottom white-bg page-heading">
+
+            <div class="col-lg-8 col-xs-8">
+                          <a style="margin-left: 15px;margin-top: 20px;" class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
+
+                    <h2 style="margin-bottom: 15px;" class = "titleBreadcrumb">Home</h2>
+                    <ol style = "margin-left: 15px;" class="breadcrumb">
+                        <li>
+                            <a href="index.html">Home</a>
+                        </li>
+                    </ol>
+                </div>
+
+                
+
+
+
+          </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div class="wrapper wrapper-content animated fadeInRight">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="ibox">
+                        <div class="ibox-content product-box">
+
+                            <div class="product-imitation">
+
+                                        <img alt="image" width="190" height="190" class="img-rounded" src="img/saga.jpg" />
+
+                            </div>
+                            <div class="product-desc">
+                                <span class="product-price">
+                                    $10
+                                </span>
+                                <small class="text-muted">Proton</small>
+                                <a href="#" class="product-name"> Saga</a>
+
+
+
+                                <div class="small m-t-xs">
+                                    Many desktop publishing packages and web page editors now.
+                                </div>
+                                <div class="m-t text-righ">
+
+                                    <a href="#" class="btn btn-xs btn-outline btn-primary">Info <i class="fa fa-long-arrow-right"></i> </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="ibox">
+                        <div class="ibox-content product-box">
+
+                            <div class="product-imitation">
+
+                            <img alt="image" width="190" height="190" class="img-rounded" src="img/myvi.jpg" />
+
+                            </div>
+                            <div class="product-desc">
+                                <span class="product-price">
+                                    $10
+                                </span>
+                                <small class="text-muted">Perodua</small>
+                                <a href="#" class="product-name"> Myvi</a>
+
+
+
+                                <div class="small m-t-xs">
+                                    Many desktop publishing packages and web page editors now.
+                                </div>
+                                <div class="m-t text-righ">
+
+                                    <a href="#" class="btn btn-xs btn-outline btn-primary">Info <i class="fa fa-long-arrow-right"></i> </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="ibox">
+                        <div class="ibox-content product-box active">
+
+                            <div class="product-imitation">
+
+
+                            <img alt="image" width="190" height="190" class="img-rounded" src="img/satria-neo.jpg" />
+
+                            </div>
+                            <div class="product-desc">
+                                <span class="product-price">
+                                    $10
+                                </span>
+                                <small class="text-muted">Proton</small>
+                                <a href="#" class="product-name"> Satria Neo</a>
+
+
+
+                                <div class="small m-t-xs">
+                                    Many desktop publishing packages and web page editors now.
+                                </div>
+                                <div class="m-t text-righ">
+
+                                    <a href="#" class="btn btn-xs btn-outline btn-primary">Info <i class="fa fa-long-arrow-right"></i> </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="ibox">
+                        <div class="ibox-content product-box">
+
+                            <div class="product-imitation">
+                                [ INFO ]
+                            </div>
+                            <div class="product-desc">
+                                <span class="product-price">
+                                    $10
+                                </span>
+                                <small class="text-muted">Category</small>
+                                <a href="#" class="product-name"> Product</a>
+
+
+
+                                <div class="small m-t-xs">
+                                    Many desktop publishing packages and web page editors now.
+                                </div>
+                                <div class="m-t text-righ">
+
+                                    <a href="#" class="btn btn-xs btn-outline btn-primary">Info <i class="fa fa-long-arrow-right"></i> </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="ibox">
+                        <div class="ibox-content product-box">
+
+                            <div class="product-imitation">
+                                [ INFO ]
+                            </div>
+                            <div class="product-desc">
+                                <span class="product-price">
+                                    $10
+                                </span>
+                                <small class="text-muted">Category</small>
+                                <a href="#" class="product-name"> Product</a>
+
+
+
+                                <div class="small m-t-xs">
+                                    Many desktop publishing packages and web page editors now.
+                                </div>
+                                <div class="m-t text-righ">
+
+                                    <a href="#" class="btn btn-xs btn-outline btn-primary">Info <i class="fa fa-long-arrow-right"></i> </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="ibox">
+                        <div class="ibox-content product-box">
+
+                            <div class="product-imitation">
+                                [ INFO ]
+                            </div>
+                            <div class="product-desc">
+                                <span class="product-price">
+                                    $10
+                                </span>
+                                <small class="text-muted">Category</small>
+                                <a href="#" class="product-name"> Product</a>
+
+
+
+                                <div class="small m-t-xs">
+                                    Many desktop publishing packages and web page editors now.
+                                </div>
+                                <div class="m-t text-righ">
+
+                                    <a href="#" class="btn btn-xs btn-outline btn-primary">Info <i class="fa fa-long-arrow-right"></i> </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="ibox">
+                        <div class="ibox-content product-box">
+
+                            <div class="product-imitation">
+                                [ INFO ]
+                            </div>
+                            <div class="product-desc">
+                                <span class="product-price">
+                                    $10
+                                </span>
+                                <small class="text-muted">Category</small>
+                                <a href="#" class="product-name"> Product</a>
+
+
+
+                                <div class="small m-t-xs">
+                                    Many desktop publishing packages and web page editors now.
+                                </div>
+                                <div class="m-t text-righ">
+
+                                    <a href="#" class="btn btn-xs btn-outline btn-primary">Info <i class="fa fa-long-arrow-right"></i> </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="ibox">
+                        <div class="ibox-content product-box">
+
+                            <div class="product-imitation">
+                                [ INFO ]
+                            </div>
+                            <div class="product-desc">
+                                <span class="product-price">
+                                    $10
+                                </span>
+                                <small class="text-muted">Category</small>
+                                <a href="#" class="product-name"> Product</a>
+
+
+
+                                <div class="small m-t-xs">
+                                    Many desktop publishing packages and web page editors now.
+                                </div>
+                                <div class="m-t text-righ">
+
+                                    <a href="#" class="btn btn-xs btn-outline btn-primary">Info <i class="fa fa-long-arrow-right"></i> </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="ibox">
+                        <div class="ibox-content product-box">
+
+                            <div class="product-imitation">
+                                [ INFO ]
+                            </div>
+                            <div class="product-desc">
+                                <span class="product-price">
+                                    $10
+                                </span>
+                                <small class="text-muted">Category</small>
+                                <a href="#" class="product-name"> Product</a>
+
+
+
+                                <div class="small m-t-xs">
+                                    Many desktop publishing packages and web page editors now.
+                                </div>
+                                <div class="m-t text-righ">
+
+                                    <a href="#" class="btn btn-xs btn-outline btn-primary">Info <i class="fa fa-long-arrow-right"></i> </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="ibox">
+                        <div class="ibox-content product-box">
+
+                            <div class="product-imitation">
+                                [ INFO ]
+                            </div>
+                            <div class="product-desc">
+                                <span class="product-price">
+                                    $10
+                                </span>
+                                <small class="text-muted">Category</small>
+                                <a href="#" class="product-name"> Product</a>
+
+
+
+                                <div class="small m-t-xs">
+                                    Many desktop publishing packages and web page editors now.
+                                </div>
+                                <div class="m-t text-righ">
+
+                                    <a href="#" class="btn btn-xs btn-outline btn-primary">Info <i class="fa fa-long-arrow-right"></i> </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="ibox">
+                        <div class="ibox-content product-box">
+
+                            <div class="product-imitation">
+                                [ INFO ]
+                            </div>
+                            <div class="product-desc">
+                                <span class="product-price">
+                                    $10
+                                </span>
+                                <small class="text-muted">Category</small>
+                                <a href="#" class="product-name"> Product</a>
+
+
+
+                                <div class="small m-t-xs">
+                                    Many desktop publishing packages and web page editors now.
+                                </div>
+                                <div class="m-t text-righ">
+
+                                    <a href="#" class="btn btn-xs btn-outline btn-primary">Info <i class="fa fa-long-arrow-right"></i> </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="ibox">
+                        <div class="ibox-content product-box">
+
+                            <div class="product-imitation">
+                                [ INFO ]
+                            </div>
+                            <div class="product-desc">
+                                <span class="product-price">
+                                    $10
+                                </span>
+                                <small class="text-muted">Category</small>
+                                <a href="#" class="product-name"> Product</a>
+
+
+
+                                <div class="small m-t-xs">
+                                    Many desktop publishing packages and web page editors now.
+                                </div>
+                                <div class="m-t text-righ">
+
+                                    <a href="#" class="btn btn-xs btn-outline btn-primary">Info <i class="fa fa-long-arrow-right"></i> </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+
+        </div>
+        <div class="footer">
+            <div class="pull-right">
+                10GB of <strong>250GB</strong> Free.
+            </div>
+            <div>
+                <strong>Copyright</strong> Example Company &copy; 2014-2017
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+<!-- Mainly scripts -->
+<script src="js/jquery-2.1.1.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+<script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+<!-- Custom and plugin javascript -->
+<script src="js/inspinia.js"></script>
+<script src="js/plugins/pace/pace.min.js"></script>
+
+</body>
+
+</html>
